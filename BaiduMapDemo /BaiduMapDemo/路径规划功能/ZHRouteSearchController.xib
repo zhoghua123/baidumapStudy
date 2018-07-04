@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZHRouteSearchController">
+            <connections>
+                <outlet property="mapView" destination="Gj5-Ig-vu1" id="Okw-D2-ZVT"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gj5-Ig-vu1" customClass="BMKMapView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9VB-aw-7Pb">
+                    <rect key="frame" x="0.0" y="64" width="50" height="40"/>
+                    <color key="backgroundColor" red="0.49848397989999998" green="0.88064549329999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="12M-9i-iP8"/>
+                        <constraint firstAttribute="height" constant="40" id="6WI-93-rmm"/>
+                    </constraints>
+                    <state key="normal" title="公交"/>
+                    <connections>
+                        <action selector="takeBusAction:" destination="-1" eventType="touchUpInside" id="mWH-d7-Bn9"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8A-0K-h5z">
+                    <rect key="frame" x="50" y="64" width="50" height="40"/>
+                    <color key="backgroundColor" red="0.49848397989999998" green="0.88064549329999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="HDf-IQ-1wc"/>
+                    </constraints>
+                    <state key="normal" title="驾车"/>
+                    <connections>
+                        <action selector="takeCarAction:" destination="-1" eventType="touchUpInside" id="yWu-bb-618"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQC-I7-okq">
+                    <rect key="frame" x="100" y="64" width="50" height="40"/>
+                    <color key="backgroundColor" red="0.49848397989999998" green="0.88064549329999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="YSh-b6-Wrc"/>
+                    </constraints>
+                    <state key="normal" title="步行"/>
+                    <connections>
+                        <action selector="warlkAction:" destination="-1" eventType="touchUpInside" id="32A-mO-GSM"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwo-FY-hn3">
+                    <rect key="frame" x="150" y="64" width="50" height="40"/>
+                    <color key="backgroundColor" red="0.49848397989999998" green="0.88064549329999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="tsf-8F-aPs"/>
+                    </constraints>
+                    <state key="normal" title="骑行"/>
+                    <connections>
+                        <action selector="takeBikeAction:" destination="-1" eventType="touchUpInside" id="xu9-yf-UjK"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOh-pT-q1z" userLabel="公交（跨城）">
+                    <rect key="frame" x="200" y="64" width="50" height="40"/>
+                    <color key="backgroundColor" red="0.49848397989999998" green="0.88064549329999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="gkR-0n-9uu"/>
+                    </constraints>
+                    <state key="normal" title="公交（跨）"/>
+                    <connections>
+                        <action selector="takeLongBusAction:" destination="-1" eventType="touchUpInside" id="nJ1-pf-ytK"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="q8A-0K-h5z" firstAttribute="leading" secondItem="9VB-aw-7Pb" secondAttribute="trailing" id="3KM-K5-P7B"/>
+                <constraint firstItem="OOh-pT-q1z" firstAttribute="width" secondItem="Jwo-FY-hn3" secondAttribute="width" id="4ke-rS-Z0A"/>
+                <constraint firstItem="Jwo-FY-hn3" firstAttribute="centerY" secondItem="XQC-I7-okq" secondAttribute="centerY" id="7d3-hl-n1I"/>
+                <constraint firstItem="q8A-0K-h5z" firstAttribute="width" secondItem="9VB-aw-7Pb" secondAttribute="width" id="Ba2-QY-R0m"/>
+                <constraint firstItem="9VB-aw-7Pb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="Ccf-t8-EcG"/>
+                <constraint firstItem="Gj5-Ig-vu1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Dia-nP-yDG"/>
+                <constraint firstItem="Jwo-FY-hn3" firstAttribute="width" secondItem="9VB-aw-7Pb" secondAttribute="width" id="FED-HK-Vx7"/>
+                <constraint firstItem="XQC-I7-okq" firstAttribute="width" secondItem="9VB-aw-7Pb" secondAttribute="width" id="QMv-QH-9wx"/>
+                <constraint firstItem="OOh-pT-q1z" firstAttribute="leading" secondItem="Jwo-FY-hn3" secondAttribute="trailing" id="RSd-Lz-FaE"/>
+                <constraint firstAttribute="bottom" secondItem="Gj5-Ig-vu1" secondAttribute="bottom" id="UUn-72-Xig"/>
+                <constraint firstItem="q8A-0K-h5z" firstAttribute="centerY" secondItem="9VB-aw-7Pb" secondAttribute="centerY" id="UpW-cU-mWS"/>
+                <constraint firstItem="Jwo-FY-hn3" firstAttribute="leading" secondItem="XQC-I7-okq" secondAttribute="trailing" id="WHO-Vl-FON"/>
+                <constraint firstAttribute="trailing" secondItem="Gj5-Ig-vu1" secondAttribute="trailing" id="Xtj-nm-MnQ"/>
+                <constraint firstItem="Gj5-Ig-vu1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jF8-0N-Ehb"/>
+                <constraint firstItem="9VB-aw-7Pb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jjZ-xG-1EG"/>
+                <constraint firstItem="XQC-I7-okq" firstAttribute="leading" secondItem="q8A-0K-h5z" secondAttribute="trailing" id="m4Z-f0-3Eh"/>
+                <constraint firstItem="XQC-I7-okq" firstAttribute="centerY" secondItem="q8A-0K-h5z" secondAttribute="centerY" id="vdx-9l-LGd"/>
+                <constraint firstItem="OOh-pT-q1z" firstAttribute="centerY" secondItem="Jwo-FY-hn3" secondAttribute="centerY" id="ymp-VD-syl"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
