@@ -10,6 +10,9 @@
 		022AE656309C54D21A9AFFCF /* libPods-BaiduMapDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F97B3E9724B2042E332D69 /* libPods-BaiduMapDemo.a */; };
 		045F46B620EC5C8900B08678 /* ZHRouteSearchController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 045F46B420EC5C8900B08678 /* ZHRouteSearchController.mm */; };
 		045F46B720EC5C8900B08678 /* ZHRouteSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045F46B520EC5C8900B08678 /* ZHRouteSearchController.xib */; };
+		047768EB20EF4C1A00549EA5 /* icon_start.png in Resources */ = {isa = PBXBuildFile; fileRef = 047768E920EF4C1A00549EA5 /* icon_start.png */; };
+		047768EC20EF4C1A00549EA5 /* icon_end.png in Resources */ = {isa = PBXBuildFile; fileRef = 047768EA20EF4C1A00549EA5 /* icon_end.png */; };
+		047768EF20EF4C2300549EA5 /* ZHAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 047768EE20EF4C2300549EA5 /* ZHAnnotation.m */; };
 		302BF9E320B2632500829D4D /* BDFuctionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 302BF9E220B2632500829D4D /* BDFuctionTool.m */; };
 		302BFA2E20B3F8DF00829D4D /* ZHShowUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302BFA2C20B3F8DF00829D4D /* ZHShowUserViewController.m */; };
 		302BFA2F20B3F8DF00829D4D /* ZHShowUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302BFA2D20B3F8DF00829D4D /* ZHShowUserViewController.xib */; };
@@ -70,6 +73,10 @@
 		045F46B320EC5C8900B08678 /* ZHRouteSearchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHRouteSearchController.h; sourceTree = "<group>"; };
 		045F46B420EC5C8900B08678 /* ZHRouteSearchController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ZHRouteSearchController.mm; sourceTree = "<group>"; };
 		045F46B520EC5C8900B08678 /* ZHRouteSearchController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZHRouteSearchController.xib; sourceTree = "<group>"; };
+		047768E920EF4C1A00549EA5 /* icon_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_start.png; sourceTree = "<group>"; };
+		047768EA20EF4C1A00549EA5 /* icon_end.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_end.png; sourceTree = "<group>"; };
+		047768ED20EF4C2300549EA5 /* ZHAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnnotation.h; sourceTree = "<group>"; };
+		047768EE20EF4C2300549EA5 /* ZHAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnnotation.m; sourceTree = "<group>"; };
 		27F97B3E9724B2042E332D69 /* libPods-BaiduMapDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaiduMapDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		302BF9E120B2632500829D4D /* BDFuctionTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFuctionTool.h; sourceTree = "<group>"; };
 		302BF9E220B2632500829D4D /* BDFuctionTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFuctionTool.m; sourceTree = "<group>"; };
@@ -181,6 +188,10 @@
 		045F46B220EC5C3500B08678 /* 路径规划功能 */ = {
 			isa = PBXGroup;
 			children = (
+				047768ED20EF4C2300549EA5 /* ZHAnnotation.h */,
+				047768EE20EF4C2300549EA5 /* ZHAnnotation.m */,
+				047768EA20EF4C1A00549EA5 /* icon_end.png */,
+				047768E920EF4C1A00549EA5 /* icon_start.png */,
 				045F46B320EC5C8900B08678 /* ZHRouteSearchController.h */,
 				045F46B420EC5C8900B08678 /* ZHRouteSearchController.mm */,
 				045F46B520EC5C8900B08678 /* ZHRouteSearchController.xib */,
@@ -457,11 +468,13 @@
 				045F46B720EC5C8900B08678 /* ZHRouteSearchController.xib in Resources */,
 				302D70C120AED40200D387FD /* baiduNaviSDK.xcassets in Resources */,
 				3034644020A4276B001B1262 /* LaunchScreen.storyboard in Resources */,
+				047768EB20EF4C1A00549EA5 /* icon_start.png in Resources */,
 				302D70C020AED40200D387FD /* baiduNaviSDK.bundle in Resources */,
 				3034643D20A4276B001B1262 /* Assets.xcassets in Resources */,
 				302D70C320AED40200D387FD /* readme.txt in Resources */,
 				302D70AA20AEB5DB00D387FD /* ZHMapFuctionViewController.xib in Resources */,
 				302BFA2F20B3F8DF00829D4D /* ZHShowUserViewController.xib in Resources */,
+				047768EC20EF4C1A00549EA5 /* icon_end.png in Resources */,
 				3034643B20A42769001B1262 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,6 +545,7 @@
 				045F46B620EC5C8900B08678 /* ZHRouteSearchController.mm in Sources */,
 				302D70A920AEB5DB00D387FD /* ZHMapFuctionViewController.m in Sources */,
 				3034644320A4276B001B1262 /* main.m in Sources */,
+				047768EF20EF4C2300549EA5 /* ZHAnnotation.m in Sources */,
 				3034643520A42769001B1262 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,6 +11,7 @@
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>
 #import <BaiduMapAPI_Utils/BMKUtilsComponent.h>//引入计算工具所有的头文件
+#import "ZHAnnotation.h"
 
 @interface ZHRouteSearchController ()<BMKMapViewDelegate,BMKRouteSearchDelegate>
 @property (weak, nonatomic) IBOutlet BMKMapView *mapView;
@@ -73,7 +74,7 @@
     option.from = array.firstObject;
     option.to = array.lastObject;
     
-   BOOL success =  [self.routesearch transitSearch:option];
+    BOOL success =  [self.routesearch transitSearch:option];
     if(success)
     {
         NSLog(@"公交检索发送成功");
@@ -138,6 +139,7 @@
     }
 }
 
+
 #pragma mark - defineAction
 
 -(NSArray *)obtainStartAndEnd{
@@ -156,6 +158,22 @@
 }
 
 #pragma mark - BMKMapViewDelegate
+
+
+- (BMKAnnotationView *)mapView:(BMKMapView *)view viewForAnnotation:(id <BMKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[ZHAnnotation class]]) {
+        ZHAnnotation *ann = annotation;
+        BMKAnnotationView *annView = [view dequeueReusableAnnotationViewWithIdentifier:@"viewss"];
+        if (!view) {
+            annView = [[BMKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"views"];
+        }
+        annView.image = [UIImage imageNamed:ann.imageName];
+        return annView;
+    }
+    return nil;
+}
+
 /**
  *根据overlay生成对应的View
  *@param mapView 地图View
@@ -202,7 +220,7 @@
     if (error == BMK_SEARCH_NO_ERROR) {
         NSLog(@"共有%zd调路线",result.routes.count);
     }else{
-       NSLog(@"搜索有问题，问题号码%d",(int)error);
+        NSLog(@"搜索有问题，问题号码%d",(int)error);
         
     }
 }
@@ -225,26 +243,41 @@
         //3. 拿到第一条路线
         BMKDrivingRouteLine *plan=  result.routes.firstObject;
         NSLog(@"该路线有%d米",plan.distance);
-       //4. 计算路线方案中的路段数目
+        //4. 计算路线方案中的路段数目
         NSInteger size = [plan.steps count];
         int planPointCounts = 0;
         for (int i = 0; i < size; i++) {
             BMKDrivingStep* transitStep = [plan.steps objectAtIndex:i];
+            if(i==0){
+                ZHAnnotation* item = [[ZHAnnotation alloc]init];
+                item.coordinate = plan.starting.location;
+                item.title = @"起点";
+                item.imageName = @"icon_start";
+                [_mapView addAnnotation:item]; // 添加起点标注
+                
+            }
+            if(i==size-1){
+                ZHAnnotation* item = [[ZHAnnotation alloc]init];
+                item.coordinate = plan.terminal.location;
+                item.title = @"终点";
+                item.imageName = @"icon_end";
+                [_mapView addAnnotation:item]; // 添加起点标注
+            }
             NSLog(@"%@   %@    %@", transitStep.entraceInstruction, transitStep.exitInstruction, transitStep.instruction);
             //轨迹点总数累计
             planPointCounts += transitStep.pointsCount;
         }
-//        // 添加途经点
-//        if (plan.wayPoints) {
-//            for (BMKPlanNode* tempNode in plan.wayPoints) {
-//                RouteAnnotation* item = [[RouteAnnotation alloc]init];
-//                item = [[RouteAnnotation alloc]init];
-//                item.coordinate = tempNode.pt;
-//                item.type = 5;
-//                item.title = tempNode.name;
-//                [_mapView addAnnotation:item];
-//            }
-//        }
+        //        // 添加途经点
+        //        if (plan.wayPoints) {
+        //            for (BMKPlanNode* tempNode in plan.wayPoints) {
+        //                RouteAnnotation* item = [[RouteAnnotation alloc]init];
+        //                item = [[RouteAnnotation alloc]init];
+        //                item.coordinate = tempNode.pt;
+        //                item.type = 5;
+        //                item.title = tempNode.name;
+        //                [_mapView addAnnotation:item];
+        //            }
+        //        }
         //轨迹点
         BMKMapPoint * temppoints = new BMKMapPoint[planPointCounts];
         int i = 0;
