@@ -38,7 +38,11 @@
  本方法是用于调用百度地图app进行导航
  官方文档地址：
  http://lbsyun.baidu.com/index.php?title=uri/api/ios
-
+步骤：
+ 1.   配置一些白名单。
+ info.plist添加LSApplicationQueriesSchemes，设置为Array。添加对应的白名单;
+ 这里以高德，百度为例，高德：iosamap百度：baidumap;
+ 2. 设置好以后就可以开始代码部分。
  */
 - (IBAction)startBaiduMapApp:(id)sender {
     //1. 检查是否安装百度地图
