@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		022AE656309C54D21A9AFFCF /* libPods-BaiduMapDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F97B3E9724B2042E332D69 /* libPods-BaiduMapDemo.a */; };
+		0416086B211446FF00D9E83D /* MapTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04160869211446FE00D9E83D /* MapTool.m */; };
 		045F46B620EC5C8900B08678 /* ZHRouteSearchController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 045F46B420EC5C8900B08678 /* ZHRouteSearchController.mm */; };
 		045F46B720EC5C8900B08678 /* ZHRouteSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045F46B520EC5C8900B08678 /* ZHRouteSearchController.xib */; };
 		047768EB20EF4C1A00549EA5 /* icon_start.png in Resources */ = {isa = PBXBuildFile; fileRef = 047768E920EF4C1A00549EA5 /* icon_start.png */; };
@@ -70,6 +71,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04160869211446FE00D9E83D /* MapTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTool.m; sourceTree = "<group>"; };
+		0416086A211446FE00D9E83D /* MapTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapTool.h; sourceTree = "<group>"; };
 		045F46B320EC5C8900B08678 /* ZHRouteSearchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHRouteSearchController.h; sourceTree = "<group>"; };
 		045F46B420EC5C8900B08678 /* ZHRouteSearchController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ZHRouteSearchController.mm; sourceTree = "<group>"; };
 		045F46B520EC5C8900B08678 /* ZHRouteSearchController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZHRouteSearchController.xib; sourceTree = "<group>"; };
@@ -185,6 +188,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041608682114422E00D9E83D /* 第二种导航功能 */ = {
+			isa = PBXGroup;
+			children = (
+				0416086A211446FE00D9E83D /* MapTool.h */,
+				04160869211446FE00D9E83D /* MapTool.m */,
+			);
+			path = "第二种导航功能";
+			sourceTree = "<group>";
+		};
 		045F46B220EC5C3500B08678 /* 路径规划功能 */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +310,7 @@
 		3034643220A42769001B1262 /* BaiduMapDemo */ = {
 			isa = PBXGroup;
 			children = (
+				041608682114422E00D9E83D /* 第二种导航功能 */,
 				302D70AB20AED40200D387FD /* BaiduNaviSDK */,
 				302BFA2A20B3F87F00829D4D /* 定位功能 */,
 				3034646520A43089001B1262 /* 地图功能 */,
@@ -546,6 +559,7 @@
 				302D70A920AEB5DB00D387FD /* ZHMapFuctionViewController.m in Sources */,
 				3034644320A4276B001B1262 /* main.m in Sources */,
 				047768EF20EF4C2300549EA5 /* ZHAnnotation.m in Sources */,
+				0416086B211446FF00D9E83D /* MapTool.m in Sources */,
 				3034643520A42769001B1262 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,7 @@
 #import "ZHMapFuctionViewController.h"
 #import "ZHShowUserViewController.h"
 #import "ZHRouteSearchController.h"
+#import "MapTool.h"
 @interface ViewController ()
 
 @end
@@ -33,4 +34,30 @@
     [self.navigationController pushViewController:[ZHRouteSearchController new] animated:YES];
 }
 
+/**
+ 本方法是用于调用百度地图app进行导航
+ 官方文档地址：
+ http://lbsyun.baidu.com/index.php?title=uri/api/ios
+
+ */
+- (IBAction)startBaiduMapApp:(id)sender {
+    //1. 检查是否安装百度地图
+    if (![[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"baidumap://"]]) {
+        [self alert];
+    }else{
+        //自动检测
+        [[MapTool sharedMapTool] navigationActionWithCoordinate:CLLocationCoordinate2DMake(34.72, 113.92) WithENDName:@"郑州市中牟县白沙镇刘申庄" tager:self];
+        }
+    
+}
+-(void)alert{
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"下载百度地图导航" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id452186370"]];
+    }]];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    }]];
+    [self presentViewController:alertVC animated:YES completion:nil];
+}
 @end
